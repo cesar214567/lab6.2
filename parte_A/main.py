@@ -102,7 +102,7 @@ def AND(array1,array2):
 
 
 
-def M(word):
+def L(word):
     if (word not in list_keywords ):
         exit("the word that you are looking for, is not in the text books ")
     num1=list_keywords.index(word)
@@ -116,6 +116,6 @@ def OR(array1,array2):
 
 
 print(list_keywords)
-print(OR(M("obra"),M("atención")))
-print(M('comienza'))
-print(AND(OR(M("obra"),M("atención")),M('comienza')))
+print(OR(L("obra"),L("atención")))
+print(L('comienza'))
+print(AND(OR(L("obra"),L("atención")),L('comienza')))

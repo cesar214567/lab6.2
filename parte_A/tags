@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AND	main.py	/^def AND(word1:str,word2:str):$/;"	f
+NOT	main.py	/^def NOT(word:str):$/;"	f
+OR	main.py	/^def OR(word1:str,word2:str):$/;"	f
+data1	main.py	/^data1=file1.read().lower().replace('\\n'," ").split(' ')$/;"	v
+data1_filtered	main.py	/^data1_filtered = list(filter(lambda x : x not in stoplist_data, data1))$/;"	v
+data2	main.py	/^data2=file2.read().lower().replace('\\n'," ").split(' ')$/;"	v
+data2_filtered	main.py	/^data2_filtered = list(filter(lambda x : x not in stoplist_data, data2))$/;"	v
+data3	main.py	/^data3=file3.read().lower().replace('\\n'," ").split(' ')$/;"	v
+data3_filtered	main.py	/^data3_filtered = list(filter(lambda x : x not in stoplist_data, data3))$/;"	v
+data4	main.py	/^data4=file4.read().lower().replace('\\n'," ").split(' ')$/;"	v
+data4_filtered	main.py	/^data4_filtered = list(filter(lambda x : x not in stoplist_data, data4))$/;"	v
+data5	main.py	/^data5=file5.read().lower().replace('\\n'," ").split(' ')$/;"	v
+data5_filtered	main.py	/^data5_filtered = list(filter(lambda x : x not in stoplist_data, data5))$/;"	v
+data6	main.py	/^data6=file6.read().lower().replace('\\n'," ").split(' ')$/;"	v
+data6_filtered	main.py	/^data6_filtered = list(filter(lambda x : x not in stoplist_data, data5))$/;"	v
+file1	main.py	/^file1= open("docs\/libro1.txt")$/;"	v
+file2	main.py	/^file2= open("docs\/libro2.txt")$/;"	v
+file3	main.py	/^file3= open("docs\/libro3.txt")$/;"	v
+file4	main.py	/^file4= open("docs\/libro4.txt")$/;"	v
+file5	main.py	/^file5= open("docs\/libro5.txt")$/;"	v
+file6	main.py	/^file6= open("docs\/libro6.txt")$/;"	v
+list_keywords	main.py	/^list_keywords =[]$/;"	v
+matrix	main.py	/^matrix= numpy.zeros((y,x))$/;"	v
+stoplist	main.py	/^stoplist=open("stoplist.txt", encoding='latin-1'  )$/;"	v
+stoplist_data	main.py	/^stoplist_data=stoplist.read().split("\\n")$/;"	v
+x	main.py	/^x=6$/;"	v
+y	main.py	/^y=len(list_keywords)$/;"	v
