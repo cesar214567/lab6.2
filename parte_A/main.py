@@ -48,11 +48,10 @@ for word in data6_filtered:
         list_keywords.append(word)                
 
 
-print(list_keywords)
-y=len(list_keywords)
-x=6
-print(len(list_keywords))
-matrix= numpy.zeros((y,x))
+x=len(list_keywords)
+y=6
+matrix= numpy.zeros((x,y))
+
 for it in data1_filtered:
     if (it in list_keywords):
         matrix[list_keywords.index(it)][0]=1
@@ -77,38 +76,46 @@ for it in data6_filtered:
     if (it in list_keywords):
         matrix[list_keywords.index(it)][5]=1
 
+#printeamos la matriz en el archivo "matrix.txt "
+out= open("docs/matrix.txt","w+")
+out.truncate()
+for i in range(x):
+    out.write(list_keywords[i]+": ")
+    for j in range(y):
+        out.write(str(int(matrix[i][j])))
+    out.write('\n')
 
-def NOT(word:str):
-    if word not in list_keywords:
-        exit("the word that you are looking for, is not in the text books ")
-    num=list_keywords.index(word)
-    temp =  matrix[num]
-    for it in range(len(temp)):
-        temp[it]=not temp[it]
-    return temp     
 
-def AND(word1:str,word2:str):
-    if (word1 not in list_keywords or word2 not in list_keywords):
+
+
+
+def NOT(array):
+    for it in range(len(array)):
+        array[it]=not array[it]
+    return array     
+
+
+def AND(array1,array2):
+    for it in range(len(array1)):
+        array1[it]=array1[it] and array2[it]
+    return array1
+
+
+
+def M(word):
+    if (word not in list_keywords ):
         exit("the word that you are looking for, is not in the text books ")
-    num1=list_keywords.index(word1)
-    num2=list_keywords.index(word2)
+    num1=list_keywords.index(word)
     temp1=matrix[num1]
-    temp2=matrix[num2]
-    for it in range(len(temp1)):
-        temp1[it]=temp1[it] and temp2[it]
     return temp1
 
-def OR(word1:str,word2:str):
-    if (word1 not in list_keywords or word2 not in list_keywords):
-        exit("the word that you are looking for, is not in the text books ")
-    num1=list_keywords.index(word1)
-    num2=list_keywords.index(word2)
-    temp1=matrix[num1]
-    temp2=matrix[num2]
-    for it in range(len(temp1)):
-        temp1[it]=temp1[it] or temp2[it]
-    return temp1
+def OR(array1,array2):
+    for it in range(len(array1)):
+        array1[it]=array1[it] or array2[it]
+    return array1
 
 
 print(list_keywords)
-print(OR("obra","atención"))
+print(OR(M("obra"),M("atención")))
+print(M('comienza'))
+print(AND(OR(M("obra"),M("atención")),M('comienza')))
